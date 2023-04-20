@@ -10,4 +10,9 @@ services:
     ports:
       - "9090:9090"
     volumes:
+      - ./prometheus/config.yml:/etc/prometheus/prometheus.yml
       - ./prometheus/data:/prometheus
+  speedtest_exporter:
+    image: miguelndecarvalho/speedtest-exporter
+    ports:
+      - "9798:9798"
