@@ -10,3 +10,18 @@ It will monitor a number of things for us:
   capabilities of the Unifi management software
 - Solar power generation: how much is our solar array generating, how
   much are we using/exporting, and so on
+
+## Getting started
+
+Everything is put together using [Docker
+Compose](https://docs.docker.com/compose/), so you should just be able
+to run:
+
+```
+docker compose up
+```
+
+Then open:
+
+- [Grafana](http://localhost:3000/)
+- [Prometheus](http://localhost:9090)
