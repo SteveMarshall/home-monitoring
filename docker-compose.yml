@@ -16,3 +16,9 @@ services:
     image: miguelndecarvalho/speedtest-exporter
     ports:
       - "9798:9798"
+  blackbox_exporter:
+    image: prom/blackbox-exporter
+    ports:
+      - "9115:9115"
+    volumes:
+      - ./prometheus/exporters/blackbox.yml:/etc/blackbox_exporter/config.yml

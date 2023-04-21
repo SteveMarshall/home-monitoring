@@ -8,3 +8,19 @@ scrape_configs:
     static_configs:
       - targets:
         - speedtest_exporter:9798
+  - job_name: 'blackbox_dns'
+    metrics_path: /probe
+    params:
+      module: [dns]
+    static_configs:
+      - targets:
+        - 192.168.1.1
+        - 1.1.1.1
+        - 1.0.0.1
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox_exporter:9115
