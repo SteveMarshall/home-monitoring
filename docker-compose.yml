@@ -16,6 +16,7 @@ services:
     image: miguelndecarvalho/speedtest-exporter
     ports:
       - "9798:9798"
+    stop_signal: SIGINT
   blackbox_exporter:
     image: prom/blackbox-exporter
     ports:
