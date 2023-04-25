@@ -4,7 +4,7 @@ scrape_configs:
     scrape_timeout: 1m
     static_configs:
       - targets:
-        - speedtest_exporter:9798
+        - steves-imac.lan:9798
   - job_name: 'dns'
     metrics_path: /probe
     params:
