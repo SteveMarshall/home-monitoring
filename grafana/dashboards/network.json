@@ -56,24 +56,24 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "{__name__=\"speedtest_download_bits_per_second\", instance=\"steves-imac.lan:9800\", job=\"speedtest\"}"
+              "options": "speedtest_download_bits_per_second"
             },
             "properties": [
               {
                 "id": "displayName",
-                "value": "Down"
+                "value": "Download"
               }
             ]
           },
           {
             "matcher": {
               "id": "byName",
-              "options": "{__name__=\"speedtest_upload_bits_per_second\", instance=\"steves-imac.lan:9800\", job=\"speedtest\"}"
+              "options": "speedtest_upload_bits_per_second"
             },
             "properties": [
               {
                 "id": "displayName",
-                "value": "Up"
+                "value": "Upload"
               }
             ]
           }
@@ -127,7 +127,30 @@
           "refId": "Upload"
         }
       ],
-      "transformations": [],
+      "transformations": [
+        {
+          "id": "labelsToFields",
+          "options": {
+            "valueLabel": "__name__"
+          }
+        },
+        {
+          "id": "merge",
+          "options": {}
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": false,
+                "field": "Time"
+              }
+            ]
+          }
+        }
+      ],
       "type": "gauge"
     },
     {
@@ -655,7 +678,7 @@
     "list": []
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {},
