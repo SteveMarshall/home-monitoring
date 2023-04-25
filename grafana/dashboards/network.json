@@ -52,7 +52,32 @@
           },
           "unit": "bps"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{__name__=\"speedtest_download_bits_per_second\", instance=\"steves-imac.lan:9800\", job=\"speedtest\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Down"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{__name__=\"speedtest_upload_bits_per_second\", instance=\"steves-imac.lan:9800\", job=\"speedtest\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Up"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 7,
@@ -72,9 +97,7 @@
         },
         "showThresholdLabels": false,
         "showThresholdMarkers": false,
-        "text": {
-          "titleSize": 0
-        }
+        "text": {}
       },
       "pluginVersion": "9.4.7",
       "targets": [
@@ -425,6 +448,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
+            "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -638,6 +662,6 @@
   "timezone": "",
   "title": "Network",
   "uid": "MJNDrYPVz",
-  "version": 7,
+  "version": 1,
   "weekStart": ""
 }
