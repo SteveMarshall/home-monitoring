@@ -18,7 +18,6 @@ Vagrant.configure("2") do |config|
   # config.vm.network "forwarded_port",
   #       guest: 9798, host: 9798
 
-  config.vm.provision :shell, inline: "apt-get update"
   config.vm.provision :docker
   config.vm.provision "shell", inline: <<-SHELL
     cd /vagrant
