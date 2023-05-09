@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/bin:/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin</string>
+  </dict>
+  <key>Label</key>
+  <string>com.stevemarshall.StartHomeMonitoring</string>
+  <key>WorkingDirectory</key>
+  <string>/Users/Steven/Development/Personal/home-monitoring</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/vagrant/bin/vagrant</string>
+    <string>up</string>
+    <string>--provision</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/tmp/com.stevemarshall.StartHomeMonitoring.stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/com.stevemarshall.StartHomeMonitoring.stderr.log</string>
+</dict>
+</plist>

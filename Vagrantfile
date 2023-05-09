@@ -3,7 +3,6 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "monitoring"
   config.vm.provider "virtualbox" do |v|
     v.name = "monitoring"
-    v.customize ["modifyvm", :id, "--nictype2", "virtio" ]
   end
 
   config.vm.network "public_network",
