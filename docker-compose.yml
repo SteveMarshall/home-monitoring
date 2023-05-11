@@ -34,3 +34,12 @@ services:
     restart: always
     volumes:
       - ./prometheus/exporters/blackbox.yml:/etc/blackbox_exporter/config.yml
+  solar_exporter:
+    image: stevemarshall/solarman-data-exporter
+    environment:
+      - INVERTER_ADDRESS=${INVERTER_ADDRESS}
+      - INVERTER_SERIAL=${INVERTER_SERIAL}
+      - MQTT_ENABLED=False
+    ports:
+      - 18000
+    restart: always
