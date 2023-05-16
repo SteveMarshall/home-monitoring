@@ -26,6 +26,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     cd /vagrant
     docker compose stop
-    docker compose up -d
+    docker compose up -d --pull always
   SHELL
 end
