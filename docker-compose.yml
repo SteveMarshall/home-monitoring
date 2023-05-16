@@ -41,5 +41,5 @@ services:
       - INVERTER_SERIAL=${INVERTER_SERIAL}
       - MQTT_ENABLED=False
     ports:
-      - 18000
+      - "18000:18000"
     restart: always
