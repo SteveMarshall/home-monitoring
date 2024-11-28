@@ -43,3 +43,12 @@ services:
     ports:
       - "18000:18000"
     restart: always
+  dmarc_metrics_exporter:
+    image: jgosmann/dmarc-metrics-exporter
+    restart: unless-stopped
+    user: 1000:1000
+    ports:
+      - "9797:9797"
+    volumes:
+      - ./dmarc-metrics-exporter/config.json:/etc/dmarc-metrics-exporter.json
+      - ./dmarc-metrics-exporter/metrics:/var/lib/dmarc-metrics-exporter:rw
