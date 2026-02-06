@@ -4,7 +4,7 @@ scrape_configs:
     scrape_timeout: 1m
     static_configs:
       - targets:
-        - steves-imac.lan:9798
+        - mac-mini.lan:9798
   - job_name: 'dns'
     metrics_path: /probe
     params:
@@ -51,6 +51,7 @@ scrape_configs:
         - https://meet.google.com
         - https://github.com
         - https://www.fastmail.com
+        - https://zoom.us
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
