@@ -52,3 +52,7 @@ services:
     volumes:
       - ./dmarc-metrics-exporter/config.json:/etc/dmarc-metrics-exporter.json
       - ./dmarc-metrics-exporter/metrics:/var/lib/dmarc-metrics-exporter:rw
+
+networks:
+  default:
+    enable_ipv6: true
