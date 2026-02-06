@@ -20,6 +20,7 @@ services:
     restart: always
     volumes:
       - ./prometheus/config.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/dns_targets.json:/etc/prometheus/dns_targets.json
       - ./prometheus/dnscrypt_targets.json:/etc/prometheus/dnscrypt_targets.json
       - ./prometheus/data:/prometheus
   speedtest_exporter:

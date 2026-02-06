@@ -9,11 +9,10 @@ scrape_configs:
     metrics_path: /probe
     params:
       module: [dns]
-    static_configs:
-      - targets:
-        - 192.168.1.1
-        - 1.1.1.1
-        - 1.0.0.1
+    file_sd_configs:
+      - files:
+        - 'dns_targets.json'
+        refresh_interval: 5m
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target

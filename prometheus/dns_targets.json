@@ -1,0 +1,22 @@
+[
+  {
+    "targets": ["192.168.1.1"],
+    "labels": {"provider":"marship"}
+  },
+  {
+    "targets": ["1.1.1.1", "1.0.0.1"],
+    "labels": {"provider":"cloudflare"}
+  },
+  {
+    "targets": ["2606:4700:4700::1111", "2606:4700:4700::1001"],
+    "labels": {"provider":"cloudflare-ipv6"}
+  },
+  {
+    "targets": ["86.54.11.100", "86.54.11.200"],
+    "labels": {"provider":"dns4eu"}
+  },
+  {
+    "targets": ["2a13:1001::86:54:11:100", "2a13:1001::86:54:11:200"],
+    "labels": {"provider":"dns4eu-ipv6"}
+  }
+]
