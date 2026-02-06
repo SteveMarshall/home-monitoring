@@ -1,0 +1,31 @@
+[
+  {
+    "targets": ["dns.aa.net.uk","dns.aa.net.uk"],
+    "labels": {"provider":"a-and-a","protocol":"doh","path":"/dns-query"}
+  }
+,
+  {
+    "targets": ["dns.aa.net.uk","dns.aa.net.uk"],
+    "labels": {"provider":"a-and-a-ipv6","protocol":"doh","path":"/dns-query"}
+  }
+,
+  {
+    "targets": ["1.0.0.1","162.159.36.1","162.159.46.1","cloudflare-dns.com","cloudflare-dns.com","dns.cloudflare.com","dns.cloudflare.com","dns.cloudflare.com"],
+    "labels": {"provider":"cloudflare","protocol":"doh","path":"/dns-query"}
+  }
+,
+  {
+    "targets": ["[2606:4700:4700::1001]:443","[2606:4700:4700::1111]:443","cloudflare-dns.com","cloudflare-dns.com","dns.cloudflare.com","dns.cloudflare.com"],
+    "labels": {"provider":"cloudflare-ipv6","protocol":"doh","path":"/dns-query"}
+  }
+,
+  {
+    "targets": ["unfiltered.joindns4.eu"],
+    "labels": {"provider":"dns4eu","protocol":"doh","path":"/dns-query"}
+  }
+,
+  {
+    "targets": ["unfiltered.joindns4.eu"],
+    "labels": {"provider":"dns4eu-ipv6","protocol":"doh","path":"/dns-query"}
+  }
+]

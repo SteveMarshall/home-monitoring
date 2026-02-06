@@ -21,6 +21,26 @@ scrape_configs:
         target_label: instance
       - target_label: __address__
         replacement: blackbox_exporter:9115
+  - job_name: 'doh'
+    metrics_path: /probe
+    params:
+      module: [doh]
+    file_sd_configs:
+      - files:
+        - 'dnscrypt_targets.json'
+        refresh_interval: 5m
+    relabel_configs:
+      - target_label: __param_target
+        source_labels: [__address__]
+      - target_label: instance
+        source_labels: [__param_target]
+      - target_label: __address__
+        replacement: blackbox_exporter:9115
+      - target_label: __param_target
+        source_labels: [__param_target, path]
+        separator: ""
+        regex: (.+)
+        replacement: https://${1}${2}?dns=AAABAAABAAAAAAAABmdvb2dsZQNjb20AAAEAAQ
   - job_name: 'http'
     metrics_path: /probe
     params:
