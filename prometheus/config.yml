@@ -23,7 +23,7 @@ scrape_configs:
   - job_name: 'doh'
     metrics_path: /probe
     params:
-      module: [doh]
+      module: [doh_ipv4]
     file_sd_configs:
       - files:
         - 'dnscrypt_targets.json'
@@ -40,6 +40,10 @@ scrape_configs:
         separator: ""
         regex: (.+)
         replacement: https://${1}${2}?dns=AAABAAABAAAAAAAABmdvb2dsZQNjb20AAAEAAQ
+      - target_label: __param_module
+        source_labels: [provider]
+        regex: .*-ipv6$
+        replacement: doh_ipv6
   - job_name: 'http'
     metrics_path: /probe
     params:
