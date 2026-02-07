@@ -691,7 +691,7 @@
             "uid": "prometheus"
           },
           "editorMode": "builder",
-          "expr": "sum by(instance) (probe_http_duration_seconds{job=\"doh\"})",
+          "expr": "sum by(provider, instance) (probe_http_duration_seconds{job=\"doh\"})",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1164,5 +1164,5 @@
   "timezone": "",
   "title": "Network",
   "uid": "MJNDrYPVz",
-  "version": 1
+  "version": 2
 }
